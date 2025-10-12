@@ -1,0 +1,122 @@
+%!TEX root = ../main.tex
+
+Dada la naturaleza geométrica del objeto a estudiar, la representación que resulta mas satisfactoria e intuitiva de ver en un principio de manera formal es la geométrica.
+
+\begin{definition}
+     Una \textbf{trenza geometrica} con $n\geq 1$ cuerdas es un conjunto $b\subset \R^2\times I$ formado por $n$ intervalos topológicos disyuntos llamados las \textit{cuerdas} de $b$, tales que la proyeccion $\R^2\times I\to I$, envia cada cuerda de manera homeomorfica a $I$, y ademas
+     \begin{align*}
+         b\cap(\R^2\times \{0\})=\{(i,0,0)|i=1,2,\ldots n\},\\
+         b\cap(\R^2\times \{0\})=\{(i,0,1)|i=1,2,\ldots n\}.
+     \end{align*}
+\end{definition}
+Observe que como cada cuerda va por medio de la proyección de manera homeomorfica a $I$, esto quiere decir que cada cuerda interseca a $\R^2\times\{t\}$ de manera única para cada $t\in I.$, es decir cada plano tiene exactamente $n$ puntos del conjunto $b.$ Note ademas que nuestra definición no menciona el punto final de cada una de las cuerdas ni el recorrido que hace. 
+\begin{eg} El diagrama donde cada cuerda tiene como punto inicial y final el mismo y donde no hay ``giros''. 
+    \begin{center}
+    \input{Trenzas Geometricas/1}
+    \end{center}
+    Note que en este ejemplo sencillo si bien cada cuerda pareciera que se encuentra solo en el plano $(x,t)$, estas cuerdas se pueden deformar en la dirección del eje $y$, por lo que debemos ser cuidadosos con estas representaciones.
+\end{eg}
+
+\begin{eg}Observe que en este ejemplo los puntos iniciales y finales de cada cuerda son los mismos que el anterior, pero en este caso si hay cuerdas que ``giran'' al rededor de otras.
+    \begin{center} 
+        \input{Trenzas Geometricas/2}
+    \end{center}
+\end{eg}
+
+A pesar de lo observado anteriormente los puntos finales e iniciales no tienen por que ser los mismos por lo que en general cada cuerda conectara a un  punto $(i,0,0)$ a un punto $(s(i),0,1)$, donde $i,s(i)\in\{1,2,\ldots n\}$.\\ 
+
+Observe que la secuencia $(s(1),s(2),\ldots,s(n))$ es una permutacion del conjunto $\{1,2,\ldots, n\}$, por lo que para una trenza $b$ cualquiera, decimos que la secuencia $(s(1),s(2),\ldots,s(n))$ es la \textbf{permutacion subyacente} de $b$. En particular note que para los ejemplos anteriores tenemos la misma permutación subyacente $(1,2,3,4).$\\
+
+Con esto en mente es natural preguntarse de que manera podemos ver si dos trenzas son ``equivalentes'' en algún sentido, para esto introducimos la noción de \textit{isotopia}.
+
+\begin{definition}
+    Dos trenzas $b$ y $b^\prime$ son isotopicas si existe una función continua $F:b\times I\to R^2\times I$, tal que para cada $s\in I$, la función $F_s:=F(-,s)$ es un embedimiento el cual su imagen es una trenza geométrica de $n$ cuerdas, $F_0=Id_b$ y $F_1(b)=b^\prime.$\\
+    Tanto $F$ como la familia de trenzas geometricas $\{F_s(b)\}_{s\in I}$ se conocen como una isotopia de $b$ a $b^\prime$.
+\end{definition}
+Note que esta noción es muy parecida a una homotopia, asi naturalmente podemos verificar la siguiente propiedad.
+\begin{prop}
+    La isotopia entre trenzas geométricas define una relación de equivalencia.
+\end{prop}
+\begin{proof}
+     \textcolor{blue}{luego}
+\end{proof}
+Dadas las similitudes con la noción de homotopia, podemos pensar en una forma de definir un ``producto'' trenzas geométricas con $n$ cuerdas.
+\begin{definition}
+    Dadas 2 trenzas geométricas con $n$ cuerdas $b_1,b_2$, definimos su producto como el conjunto de puntos $(x,y,t)\in \R^2\times I$ tales que si $t\in[0,1/2]$ entonces $(x,y,2t)\in b$, y en caso donde $t\in[1/2,1]$ tenemos que $(x,y,2t-1)\in b_2$.
+\end{definition}
+Note que el producto de dos trenzas geométricas de ese estilo claramente sera otra trenza, ya que lo único que estamos haciendo es unir el final de una con el inicio de la otra. La siguiente proposición nos permitirá definirla como un producto sobre las clases de trenzas geométricas con $n$ cuerdas
+\begin{prop}
+    Dadas $b_1,b_2,b_1^\prime,b_2^\prime$, donde $b_i$ es isotopica a $b_i^\prime$ para $i=1,2$, entonces $b_1b_2$ es isotopica a $b_1^\prime b^\prime_2$
+\end{prop}
+\begin{proof}
+    \textcolor{blue}{luego}
+\end{proof}
+Dado esto podemos observar que esta operación es asociativa y ademas tiene un elemento neutro. Este elemento neutro sera denotado como $1_n$ y es presentador por la trenza geométrica dibujada de el ejemplo 2.2. en su expresión de conjunto seria
+$$1_n=\{1,2,\ldots,n\}\times\{0\}\times I.$$
+De esto concluimos que es un monoide, la prueba de que efectivamente resulta un grupo vendra mas adelante.
+\subsection{Diagramas de Trenzas y movimientos de Reidemeister}
+Como mencionamos en el Ejemplo 2.2, si bien uno debe ser cuidadoso con las representaciones, en términos prácticos esta proyección donde las cuerdas en el diagrama pareciera que están solo en el plano $y=0$ y donde lo tramos que pasan por ``debajo'' pareciera que se cortan son útiles, siempre y cuando de manera local solo hayan cortes transversales dos a dos. Esta idea nos lleva a querer definir estas representaciones.
+
+\begin{definition}
+    Un \textbf{diagrama de trenzas} de $n$ cuerdas es un conjunto $D\subset \R\times I$, vista como la union de $n$ intervalos topologicos llamados las cuerdas de $D$ donde se cumplen las siguientes condiciones.
+    \begin{itemize}
+        \item La proyeccion $\R\times I\to I$ envia cada cuerda homeomorficamente a $I.$
+        \item Cada punto $\{1,2,\ldots\}\times\{0,1\}$ es el extremo de una unica cuerda.
+        \item Todo punto de $\R\times I$ pertenece a lo maximo a 2 cuerdas. En cada punto de interseccion las cuerdas se cruzan de manera transversal y una de ellas se difumina para indicar que pasa por debajo, mientras la que se ve continua indica que pasa por arriba. 
+        \end{itemize} 
+\end{definition}
+En particular si en los ejemplos 2.2 y 2.3 quitamos el eje $y$ serian diagramas de trenzas, pero incluimos la tercera condicion para evitar casos como el siguiente 
+\begin{eg}
+    Observe que en la figura es imposible distinguir que trenza pasa por debajo de la otra por lo que si bien podemos ver que la permutacion subyacente seria del tipo $(3,2,1)$ no sabemos como se comportan las trenzas por el dibujo.
+    \begin{center}
+    \input{Trenzas Geometricas/3}
+\end{center}
+\end{eg}
+La condicion en la que hemos realizado el particular enfasis, nos dice que via homeomorfismo en una vecindad de estos puntos de cruce, las trenzas se ven como el conjunto $\{(x,y):xy=0\}$ que en escencia son  los ejes coordenados de $\R^2.$\\
+
+Otra implicacion de esta condicion es que el numero de cruces en $D  $ es finito, pues en caso contrario si fueran infinito (\textcolor{blue}{luego lo pienso}).\\
+
+El proposito de introducir los diagramas de trenzas es que podemos ver como estos son representantes de la clase de isotopia de las trenzas geometricas de la manera mas natural posible. La idea detrás de esto es ver a el diagrama de trenzas de la manera natural dentro de $\R^2\times I$, como $\R\times\{0\}\times I$, asi en cada vecindad de intersección cambiamos la coordenada de la trenza que pasa por debajo mientras las otras dos las dejamos quietas, es decir nuestra cuerda ahora se encontrara ubicada en $\R\times(0,\infty)\times I.$ Este acto que es continuo y transforma el diagrama $D$ en una trenza geométrica, la cual tiene su clase de isotopia bien definida presentada por $D$, esto suele denotarse por $\beta(D).$\\
+
+Con esto en mente es relativamente sencillo imaginarse la forma en la que uno puede transformar un elemento de la clase de isotopia en un diagrama, dada $\beta$ una trenza geométrica, en la clase de isotopia podemos encontrar una trenza geométrica $b$ donde solo se den los cruces de manera transversal, luego si recordamos cuales son las cuerdas que tienen segunda coordenada mas grande en el corte al momento de hacer la proyección $\R^2\times I\to R\times{0}\times I$ estas serán en las que tomaremos sub-arcos de $b$ para que se vea ``cortada'', de esta manera podemos obtener el diagrama $D$ que es claramente igual a $\beta(D).$ Con esta idea de que podemos pasar libre mente de la trenza geométrica a un diagrama de trenzas pues debemos de definir que es la isotopia en estos diagramas.
+\begin{definition}
+     Dos diagramas de trenzas $D$ y $D^\prime$ se dicen isotopicos  si existe una funcion continua $F:D\times I\to R\times I$ tal que para cada $s\in I$, $D_s=F(D\times\{s\})\subset \R\times I$ es un diagrama de trenzas con la misma cantidad cuerdas, ademas $D_0=D$ y $D_1=D^\prime.$ 
+ \end{definition} 
+ Se sobreentiende de la definición de que la función $F$ en cada $s$ envía los cruces y la información de quien va por debajo y arriba a $D_s$.
+ \begin{eg}
+     Observe que podemos ver todo lo que se menciono antes, la información se preserva tanto de los cortes como de que cuerda va por debajo.
+     \begin{center}
+    \input{Trenzas Geometricas/4}
+\end{center}
+ \end{eg}
+ Análogamente el producto de diagramas $D_1$ y $D_2$ lo podemos ver como pegar un diagrama encima de otro para posteriormente aplastarlo hasta que este contenido en $\R\times I,$ ese producto sera llamado $D_1D_2$ y este diagrama representara el producto de las trenzas $\beta_1$ y $\beta_2$ correspondientes
+ \begin{eg} El producto de dos diagramas para obtener $D_1D_2$ y $D_2D_1$
+     \begin{center}
+         \input{Trenzas Geometricas/5}
+     \end{center}
+ \end{eg}
+ Note que esto ya nos muestra la no conmutatividad ya que la permutacion subyacente de el representante $D_1D_2$ es $(3,1,2)$, mientras que la de $D_2D_1$ es $(2,3,1).$\\
+
+ Por ultimo, teniendo en cuenta que todos los diagramas los podemos pensar como cuerdas en la realidad es natural pensar en que movimientos preservan la clase de isotopia entre diagramas, para esto tomamos prestados de la teoria de nudos los \textit{movimientos de Reidemeister} $\Omega_2$ y $\Omega_3$
+ \begin{definition}
+ Definimos $\Omega_2$ un movimiento donde tomamos dos cuerdas del diagrama y creamos dos cruces nuevos transversales, pasando una de las cuerdas del diagrama por debajo de la otra, mientras que a $\Omega_3$ es un movimiento que involucra a tres cuerdas y preserva el numero de cruces transversales pero invierte el diagrama de manera reflexiva.  
+ \end{definition}
+
+ Estos movimientos solo afectan el diagrama en un disco dentro de $\R\times I$ y podemos verlos a continuación
+ \begin{center}
+     \input{Trenzas Geometricas/6}
+ \end{center}
+ Decimos que el movimiento inverso es invertir las flechas en la figura, note que esto nos permite jugar con las cuerdas sin cambiar la estructura del diagrama, por lo que podemos definir una nocion de equivalencia
+ \begin{definition}
+     Dados dos diagramas $D$ y $D^\prime$ decimos que son $R$-equivalentes si $D$ se puede transformas por medio de una secuencia finita de isotopias y movimientos de Reidemeister a $D^\prime$
+ \end{definition}
+ A simple instancia no parece tan claro que esta nocion de equivalencia pueda ser trasladada hacia todas las trenzas geométricas, pero resulta que si podemos hacerlo
+ \begin{theorem}
+     Dos diagramas de trenzas representan trenzas geométricas isotopicas si y solo si estos diagramas son $R$-equivalentes.
+ \end{theorem}
+ La prueba de este hecho se reduce a cuatro pasos, pero la terminología y longitud de la prueba se salen de los propósitos del proyecto, para la prueba de este hecho vea \cite{KasselTuraev2008}.
+
+
+
+
+

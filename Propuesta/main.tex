@@ -48,79 +48,20 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-    Este trabajo estudia el concepto del grupo de trenzas desde multiples perspectivas, geométrica, algebraica, como espacios de configuración y mas que surgen de estas. Discutimos como estas definiciones resultan particulares en dimensión baja $B_3$ \textcolor{blue}{sujeto a cambios dependiendo de como vaya el avance}
+    Este trabajo estudia el concepto del grupo de trenzas desde múltiples perspectivas, geométrica, algebraica, como espacios de configuración y mas que surgen de estas. Posterior a estas mostramos como cada una de estas perspectivas resultan equivalentes y se mencionaran algunos resultados interesantes \textcolor{blue}{aun por decidir de momento cuestiones relacionadas con $SL_2(\Z)$, grupo libre de torsion, etc.} 
 \end{abstract}
 \section{Introducción}
-La primera aparición con mención propia de los grupos de trenzas se las debemos a Emil Artin \textcolor{red}{añadir cita}, quien en 1925 los introdujo para modelar como se entrelazaban múltiples cuerdas en un espacio euclidiano 3-dimensional, estas cuerdas es lo que conocemos como trenzas. No es sorpresa que el estudio de estos objetos tan naturales en la naturaleza resulte de interés debido a su clara conexión con la teoría nudos.
-\textcolor{blue}{Agregar contexto historico, preguntas a responder y organizacion del documento aun variable}
+La primera aparición con mención propia de los grupos de trenzas se las debemos a Emil Artin \cite{Artin1925}, quien en 1925 los introdujo para modelar como se entrelazaban múltiples cuerdas en un espacio euclidiano 3-dimensional, estas cuerdas es lo que conocemos como trenzas. No es sorpresa que el estudio de estos objetos tan naturales en la naturaleza resulte de interés debido a su clara conexión con la teoría nudos.
+
+En este proyecto cubriremos el primer capitulo de \cite{KasselTuraev2008}, con la intención de introducir al lector a los grupos de trenzas y todas sus posibles perspectivas, complementar pruebas, presentar diagramas diferentes y en general dar una vista mas aterrizada a entender estas estructuras tan interesantes. Presentaremos las definiciones elementales y multiples perspectivas para luego revisar resultados de equivalencia y finalizar con algunos hechos bien conocidos en la literatura pero que resultan interesantes para un nuevo lector.
+\textcolor{blue}{Cambiara a posteriori dependiendo del avance}
+
 
 \section{Las Trenzas Geométricas}
-
-Dada la naturaleza geométrica del objeto a estudiar, la representacion que resulta mas satisfactoria e intuitiva de ver en un principio de manera formal es la geométrica.
-
-\begin{definition}
-     Una \textbf{trenza geometrica} con $n\geq 1$ cuerdas es un conjunto $b\subset \R^2\times I$ formado por $n$ intervalos topológicos disyuntos llamados las \textit{cuerdas} de $b$, tales que la proyeccion $\R^2\times I\to I$, envia cada cuerda de manera homeomorfica a $I$, y ademas
-     \begin{align*}
-         b\cap(\R^2\times \{0\})=\{(i,0,0)|i=1,2,\ldots n\},\\
-         b\cap(\R^2\times \{0\})=\{(i,0,1)|i=1,2,\ldots n\}.
-     \end{align*}
-\end{definition}
-Observe que como cada cuerda va por medio de la proyección de manera homeomorfica a $I$, esto quiere decir que cada cuerda interseca a $\R^\times\{t\}$ de manera única para cada $t\in I.$, es decir cada plano tiene exactamente $n$ puntos del conjunto $b.$ Note ademas que nuestra definición no menciona el punto final de cada una de las cuerdas ni el recorrido que hace. 
-\begin{eg} El diagrama donde cada cuerda tiene como punto inicial y final el mismo y donde no hay ``giros''. 
-    \begin{center}
-    \input{1}
-    \end{center}
-    Note que en este ejemplo sencillo si bien cada cuerda pareciera que se encuentra solo en el plano $(x,t)$, estas cuerdas se pueden deformar en la dirección del eje $y$, por lo que debemos ser cuidadosos con estas representaciones.
-\end{eg}
-
-\begin{eg}Observe que en este ejemplo los puntos iniciales y finales de cada cuerda son los mismos que el anterior, pero en este caso si hay cuerdas que ``giran'' al rededor de otras.
-    \begin{center} 
-        \input{2}
-    \end{center}
-\end{eg}
-
-A pesar de lo observado anteriormente los puntos finales e iniciales no tienen por que ser los mismos por lo que en general cada cuerda conectara a un  punto $(i,0,0)$ a un punto $(s(i),0,1)$, donde $i,s(i)\in\{1,2,\ldots n\}$.\\ 
-
-Observe que la secuencia $(s(1),s(2),\ldots,s(n))$ es una permutacion del conjunto $\{1,2,\ldots, n\}$, por lo que para una trenza $b$ cualquiera, decimos que la secuencia $(s(1),s(2),\ldots,s(n))$ es la \textbf{permutacion subyacente} de $b$. En particular note que para los ejemplos anteriores tenemos la misma permutación subyacente $(1,2,3,4).$\\
-
-Con esto en mente es natural preguntarse de que manera podemos ver si dos trenzas son ``equivalentes'' en algún sentido, para esto introducimos la noción de \textit{isotopia}.
-
-\begin{definition}
-    Dos trenzas $b$ y $b^\prime$ son isotopicas si existe una función continua $F:b\times I\to R^2\times I$, tal que para cada $s\in I$, la función $F_s:=F(-,s)$ es un embedimiento el cual su imagen es una trenza geométrica de $n$ cuerdas, $F_0=Id_b$ y $F_1(b)=b^\prime.$\\
-    Tanto $F$ como la familia de trenzas geometricas $\{F_s(b)\}_{s\in I}$ se conocen como una isotopia de $b$ a $b^\prime$.
-\end{definition}
-Note que esta noción es muy parecida a una homotopia. Por lo que naturalmente podemos verificar la siguiente propiedad.
-\begin{prop}
-    La isotopia entre trenzas geométricas define una relación de equivalencia.
-\end{prop}
-\begin{proof}
-    \textcolor{blue}{la escribo luego}
-\end{proof}
-Dadas las similitudes con la noción de homotopia, podemos pensar en una forma de definir un ``producto'' trenzas geométricas con $n$ cuerdas.
-\begin{definition}
-    Dadas 2 trenzas geometricas con $n$ cuerdas $b_1,b_2$, definimos su producto como el conjunto de puntos $(x,y,t)\in \R^2\times I$ tales que si $t\in[0,1/2]$ entonces $(x,y,2t)\in b$, y en caso donde $t\in[1/2,1]$ tenemos que $(x,y,2t-1)\in b_2$.
-\end{definition}
-Note que el producto de dos trenzas geométricas de ese estilo claramente sera otra trenza, ya que lo único que estamos haciendo es unir el final de una con el inicio de la otra. La siguiente proposicion nos permitira definirla como un producto sobre las clases de trenzas geometricas con $n$ cuerdas
-\begin{prop}
-    Dadas $b_1,b_2,b_1^\prime,b_2^\prime$, donde $b_i$ es isotopica a $b_i^\prime$ para $i=1,2$, entonces $b_1b_2$ es isotopica a $b_1^\prime b^\prime_2$
-\end{prop}
-\begin{proof}
-    \textcolor{blue}{luego}
-\end{proof}
-Dado esto podemos observar que esta operación es asociativa y ademas tiene un elemento neutro. Este elemento neutro sera denotado como $1_n$ y es presentador por la trenza geométrica dibujada de el ejemplo 2.2. en su expresión de conjunto seria
-$$1_n=\{1,2,\ldots,n\}\times\{0\}\times I.$$
-\subsection{Diagramas de Trenzas}
-\textcolor{blue}{seguir otro dia pg16}
+\input{Trenzas Geometricas/Geometricas.tex}
 
 \section{El Grupo de Trenzas de Artin}
-Luego de nuestro paso por la idea geometrica y teniendo en cuenta que definimos el grupo de trenzas geometricas, en esta seccion abordaremos las trenzas desde un punto de vista netamente algebraico.
-\begin{definition}
-    El grupo de trenzas de Artin $B_n$ es el grupo generado por $n-1$ generadores $\sigma_i$ con $i=1,2,\ldots n-1$ y las relaciones
-    $$\sigma_i\sigma_j=\sigma_j\sigma_i,$$
-    para todo $i,j=1,2,\ldots n-1$ con $|i-j|\geq 2,$ y
-    $$\sigma_i\sigma_{i+1}\sigma_i=\sigma_{i+1}\sigma_i\sigma_{i+1},$$
-    para $i=1,2,\ldots n-2.$
-\end{definition}
+\input{Trenzas Algebraicas/Algebra.tex}
 
 
 
