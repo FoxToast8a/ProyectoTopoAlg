@@ -1,0 +1,37 @@
+%!TEX root = ./main.tex
+
+Denotemos $\mathcal{B}_n$ como el conjunto de trenzas en $n$ cuerdas con la multiplicacion dada en la Definicion 2.6, veamos que efectivamente es un grupo
+\begin{prop}
+    $\mathcal{B}_n$ es un grupo.
+\end{prop}
+\begin{proof}
+    Previamente ya habíamos visto que con esta operación el conjunto es un monoide, nos bastaría encontrar un inverso para cada $\beta\in \mathcal{B}_n$. Para $i=1,\ldots,n-1$, definimos $\sigma_i^+$ y $\sigma_i^-$ dadas en la siguiente figura
+    \begin{center}
+        \textcolor{blue}{luego la dibujo}
+    \end{center}
+    Veamos que el conjunto de todas estas genera a cualquier trenza $\beta\in \mathcal{B}_n$. consideremos el diagrama de trenzas $D\subset\R\times I$ que la representa. Como hay una cantidad finita $k$ de intersecciones en el diagrama podemos deformarlo de tal manera que cada intersección se de en una segunda coordenada diferente, es decir podemos conseguir una partición del intervalo
+    $$0=t_0<t_1<\dots<t_{k-1}<t_k=1,$$
+    tal que cada banda $\R\times[t_j,t_{j+1}]$ posee exactamente una intersección en el interior de cada banda. Así cada una de estas bandas se puede ver como una reparametrizacion de la trenza $\sigma_i^+$ o $\sigma_i^-$, así con el producto obtenemos que
+    $$\beta=\beta(D)=\sigma_{i_1}^{\varepsilon_1}\dots\sigma_{i_k}^{\varepsilon_k},$$
+    donde cada $\varepsilon_j=\pm$ y $i_j\in{1,2,\ldots,n-1}$.
+    Así como cada $\sigma_i^+\sigma_i^-=\sigma_i^-\sigma_i^+=1$, debido a que este diagrama es equivalente al trivial aplicando $\Omega_2$. Así el elemento inverso es
+    $$\beta^{-1}=\sigma_{i_k}^{-\varepsilon_k}\dots\sigma_{i_1}^{-\varepsilon_1}.$$ 
+    Mostrando así que es un grupo. 
+\end{proof}
+Teniendo en cuenta que vimos que los elementos $\sigma_i^+$ generaban el $B_n$, la pregunta natural que surge es si cumplen las relaciones de trenzas propuestas por Artin.
+\begin{prop}
+    Los elementos $\sigma_1^+,\ldots,\sigma_{n-1}^+\in \mathcal{B}_n$ satisfacen las relaciones de trenzas. 
+\end{prop}
+\begin{proof}
+    Note que dados $|i-j|\geq 2$, esto quiere decir que $i\geq j+2$ o $j\geq i+2$, en ambos casos al hacer el producto $\sigma_i^+\sigma_j^+$ y $\sigma_j^+\sigma_i^+$ las trenzas involucradas son diferentes, por lo que por medio de una isotopia se puede llegar de un diagrama a otro, asi $\sigma_i^+\sigma_j^+=\sigma_j^+\sigma_i^+.$ Note que para $\sigma_i^+\sigma_{i+1}^+\sigma_i^+=\sigma_{i+1}^+\sigma_i^+\sigma_{i+1}^+,$ se tiene la igualdad debido a que ambos diagramas difieren solo por hacer el movimiento $\Omega_3.$
+    \begin{center}
+        \textcolor{blue}{luego la dibujo}
+    \end{center}
+\end{proof}
+Con todo esto estamos preparados para probar nuestro primer resultado de equivalencia
+\begin{theorem}
+    Para $\varepsilon=\pm,$ existe un unico homomorfismo $\varphi_{\varepsilon}:B_n\to\mathcal{B_n}$ tal que $\varphi_{\varepsilon}(\sigma_i)=\sigma_i^{\varepsilon}$ para todo $i=1,\ldots n-1.$ Ademas el homorfismo $\varphi_\varepsilon$ resulta ser un isormorfismo. 
+\end{theorem}
+\begin{proof}
+    
+\end{proof}

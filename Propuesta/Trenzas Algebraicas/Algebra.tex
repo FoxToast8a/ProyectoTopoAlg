@@ -16,21 +16,37 @@ Como es comun en grupos queremos ver que como se comportan sus elementos bajo ho
     Si existen elementos $\{s_i|i=1,\ldots,n-1\}$ en un grupo $G$ tales que se satisfacen las relaciones de trenzas, entonces existe un unico homomorfismo de grupos $f:B_n\to G$, tal que $s_i=f(\sigma_i).$
 \end{lemma}
 \begin{proof}
-    \textcolor{blue}{luego}
+    Sea $F_n$ el grupo libre con $n$ generadores, llamemos estos $\sigma_i$, luego existe un unico homeomorfismo $f^\prime$ dado por
+    \begin{align*}
+        f^\prime:&F_n\to G\\
+        &\sigma_i\to s_i
+    \end{align*}
+    Ahora recordemos que $B_n$ esta dada por las relaciones dadas en la definicion 3.1. Sea $N$ el subgrupo normal de $G$ mas pequeño que contiene los elementos $\sigma_i\sigma_j\sigma_i^{-1}\sigma_j^{-1}$ para $i,j=1,\ldots n-1$ tales que $|i-j|\geq 2$ y $\sigma_k\sigma_{k+1}\sigma_k\sigma_{k+1}^{-1}\sigma_k^{-1}\sigma_{k+1}^{-1}$ para $k=1,\ldots n-2.$ Note que en particular esto significa que $B_n\cong F_n/N$, ademas por como definimos el homomorfismo $f^\prime$ tenemos que $f^\prime(N)=\{1\}\leq G.$ ya que en $G$ las relaciones de trenzas se cumplen. Asi el subgrupo normal $N$ esta contenido en el kernel del homomorfismo, asi por el teorema fundamental del homeomorfismo, $f^\prime$ induce un homeomorfismo  $f:F_n/N\to G$, que es justamente lo que queriamos.
 \end{proof}
 Para los primeros dos grupos de trenzas, estos eran abelianos, pero esto de hecho no se mantiene siempre para esto mostremos primero el siguiente lema
 \begin{lemma}
     Las trasposiciones simples $s_i=(i\,i+1)\in S_n$, generan $S_n$ y satisfacen las relaciones de trenzas.
 \end{lemma}
 \begin{proof}
-    \textcolor{blue}{luego}
+    Primero probemos que lo generan. Procedemos por inducción, para $n=2$ es claro ya que $S_2=\langle(1,2)\rangle$, ahora suponga que se tiene para $S_n$, veamos que lo tenemos para $S_{n+1}$, dada $\sigma\in S_{n+1}$, si el elemento $n+1$ queda fijo bajo la permutacion, entonces lo podemos ver como un elemento de $S_n$ y por la hipótesis de inducción lo generan las trasposiciones simples. Ahora suponga que $\sigma(n+1)=m$ para algun $m<n+1$, observe que si definimos 
+    $$\tau:=(n\, n+1)(n-1\, n)\dots(m+1\,m+2)(m\,m+1).$$
+    Note que $\tau(m)=n+1,$ así $\tau\sigma(n+1)=n+1$, así $\tau\sigma$ fija $n+1$ y por la hipótesis de inducción es generada por trasposiciones simples, como $\tau$ es un producto de traspocisiones simples, multiplicando por el inverso concluimos que $\sigma$ tambien esta generada por estas.\\
+
+    Ver que cumplen las relaciones de trenzas es simple, ya que por el producto en $S_n$ tenemos que si $|i-j|\geq 2$ esto implica $i\neq j$ y ademas que $j>i+1$ o $i>j+1$, así
+    $$s_is_j=(i\,i+1)(j\,j+1)=(j\,j+1)(i\,i+1)=s_js_i,$$
+    ya que al ser ciclos disjuntos estos conmutan.
+
+    De manera similar para $i=1,2,\ldots,n-2.$
+    $$s_is_{i+1}s_i=(i\,i+1)(i+1\,i+2)(i\,i+1)=(i\, i+2)=(i+1\,i+2)(i\,i+1)(i+1\,i+2)=s_{i+1}s_is_{i+1}.$$
+    Mostrando asi que se verifican las relaciones de trenzas.
 \end{proof}
 \begin{theorem}
     El grupo $B_n$ para $n\geq 3$ no es abeliano
 \end{theorem}
 \begin{proof}
-    \textcolor{blue}{luego}
+     Por los Lemas 3.3 y 3.4 existe un único homomorfismo de grupos $f:B_n\to S_n$, donde $f(\sigma_i)=s_i$, luego como las traspociciones simples generan $S_n$ este homomorfismo es sobreyectivo. Como $S_n$ para $n\geq 3$ es no abeliano se sigue que $B_n$ no los es.
 \end{proof}
+
 Por lo visto antes existe un homomorfismo unico de grupos $\pi:B_n\to S_n$, de manera similar es claro que la inclusion $i:B_n\to B_{n+1}$ es un homomorfismo, esto en ocasiones resulta util ya que tendremos una cadena de subgrupos $B_1\subset B_2\subset B_3\subset \dots$ y un diagrama que conmuta
 \begin{center}
     \input{Trenzas Algebraicas/7}

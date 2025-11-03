@@ -4,7 +4,7 @@
 \usepackage{thmtools}
 \usepackage[framemethod=TikZ]{mdframed}
 \mdfsetup{skipabove=1em,skipbelow=1em,nobreak=true}
-
+\newcommand{\sqed}{\hfill\includegraphics[height=2ex]{sancoya.png}}
 \theoremstyle{definition}
 \declaretheoremstyle[
     headfont=\bfseries\sffamily\color{black!70!black}, bodyfont=\normalfont,
@@ -27,7 +27,7 @@
 \declaretheoremstyle[
     headfont=\bfseries\sffamily\color{black!70!black}, bodyfont=\normalfont,
     numbered=no,
-    qed=\qedsymbol
+    qed=\sqed
 ]{thmproofbox}
 
 \declaretheorem[numberwithin=section,style=thmbox, name=Definición]{definition}

@@ -1,0 +1,38 @@
+%!TEX root = ../main.tex
+
+Otro acercamiento a la nocion de Trenzas desde el algebra es a traves de estudiar ciertos automorfismos de el grupo libre de $n$ elementos $F_n\langle a_1,\ldots,a_n\rangle$
+
+\begin{definition}
+    Decimos que un automorfismo $\phi:F_n\to F_n$ es un \textit{automorfismo de trenzas} si satisface las siguientes condiciones
+    \begin{itemize}
+        \item[i)] Existe $\mu\in S_n$ tal que $\phi(a_k)$ es conjugado en $F_n$ a $a_{\mu(k)}$ para todo $k\in{1,2,\ldots,n}$
+        \item[ii)]$\phi(a_1\dots a_n)=a_1\dots a_n.$
+    \end{itemize}
+\end{definition}
+Recordemos que todo automorfismo esta completamente determinado por la accion sobre sus geneeradores, luego bastara téner esto en cuenta para definir algun automorfismo de trenzas, un ejemplo de estos son los siguientes
+\begin{eg}
+    Definamos los siguientes automorfismos
+    \begin{align*}
+        \tilde\sigma_i(a_k)&=\begin{cases}
+            a_{k+1}&\text{si } k=i,\\
+            a_k^{-1}a_{k-1}a_k&\text{si }k=i+1,\\
+            a_k&\text{en otro caso}.
+        \end{cases}\\
+        \tilde\sigma_i^{-1}(a_k)&=\begin{cases}
+        a_ka_{k+1}a_k^{-1}&\text{si }k=i,\\
+             a_{k-1}&\text{si } k=i+1,\\
+            a_k&\text{en otro caso}.
+        \end{cases}
+    \end{align*}
+    Note que la primera condicion se cumple si tomamos la permutacion $\mu=(i\,i+1)$, ya que esos son los generadores cambiados por $\tilde\sigma_i$, de manera similar 
+    $$\tilde\sigma_i(a_1\dots a_ia_{i+1}\dots a_n)=a_1\dots (a_{i+1})(a_{i+1}^{-1}a_ia_{i+1})\dots a_n=a_1\dots a_ia_{i+1}\dots a_n.$$
+\end{eg}
+
+Es claro que la eleccion de denotar una como el inverso de la otra es intencional. Definimos $\tilde B_n$ como el conjunto de todos los automorfismos de trenzas sobre $F_n$, asi tenemos el siguiente resultado esperable
+
+\begin{prop}
+ $\tilde B_n$ es un grupo con la composicion.
+\end{prop}
+\begin{proof}
+    \textcolor{blue}{luego}
+\end{proof}
