@@ -11,4 +11,29 @@ Sea $M$ una variedad topologica orientada y $Q\subset\text{Int}(M)$ finito.
     \end{itemize}
 \end{definition}
 
-\textcolor{blue}{Luego completo esta parte}
+Observe que en $i)$ cada punto de frontera esta fijo, mientras que por $ii)$ puede que $Q$ quede fijo pero tambien esta la posibilidad de permutar los puntos en $Q.$ 
+
+Como es constumbre tenemos que definir una nocion de isotopia entre estos auto-homemomorfismos para poder empezar a dar la estructura adecuada y no estar repitiendo elementos.
+
+\begin{definition}
+    Sean $f_0,f_1$ auto-homeomorfismos de $(M,Q)$, decimos que son isotopicos si existe una familia de auto-homemomorfismos $\{f_t\}_{t\in I}$ donde estos sean los extremos y cada $f_t$ sea continuo.
+\end{definition}
+Dada la similitud con nociones anteriores no mostraremos que efectivamente esta isotopia define una relacion de equivalencia.
+\begin{definition}
+    El \textit{Mapping Class Group} $\mathcal{M}(M,Q)$ es el conjunto de clases de isotopia de automorfismos con la composicion de funciuones como operacion.
+\end{definition}
+Si el conjunto de puntos $Q=\varnothing$ omitiremos su escritura en general. A continuacion veremos un ejemplo clasico de este grupo
+\begin{eg}
+    Mostraremos que $\mathcal{M}(D^n)=\{1\},$ para esto consideremos la siguiente familia de funciones
+    $$h_t(x)=\begin{cases}
+        x&\text{si }t\leq|x|\leq 1,\\
+        th\left(\dfrac{x}{t}\right)&\text{si }|x|<t.
+    \end{cases}$$
+   Donde $h$ es un auto-homemomorfismo de $D^n$. Note que $h_0=Id_{D^n}$, mientras que
+   $$h_1=\begin{cases}
+       x&\text{si }|x|=1,\\
+       h(x)&\text{si }|x|<1.
+   \end{cases}$$ 
+   Que justamente es $h$ ya que este es auto-homeomorfismo. Claramente estos son continuos y son auto-homeomorfismos, asi concluimos lo deseado, en particular note que si $h(0)=0$, cada $h_t$ fija $0$ por lo que $\mathcal{M}(D^n,\{0\})=\{1\}.$
+\end{eg}
+\textcolor{blue}{hablar de halftwist}

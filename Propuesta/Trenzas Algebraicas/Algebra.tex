@@ -1,6 +1,6 @@
 %!TEX root = ../main.tex
 Luego de nuestro paso por la idea geométrica y teniendo en cuenta que definimos el grupo de trenzas geométricas, en esta sección abordaremos las trenzas desde un punto de vista netamente algebraico.
-\begin{definition}
+\begin{definition}\label{artindef}
     El grupo de trenzas de Artin $B_n$ es el grupo generado por $n-1$ generadores $\sigma_i$ con $i=1,2,\ldots n-1$ y las relaciones
     $$\sigma_i\sigma_j=\sigma_j\sigma_i,$$
     para todo $i,j=1,2,\ldots n-1$ con $|i-j|\geq 2,$ y
@@ -12,7 +12,7 @@ Dicho esto veamos los ejemplos mas sencillos de grupo de trenzas.
  $B_1=\{1\}$, es decir el grupo trivial ya que no habrían generadores, en el caso de $B_2$ tenemos que es un grupo con un generador $\sigma_1$, donde nuevamente no hay relaciones, así $B_2=\langle\sigma_1\rangle\cong \Z$.
 \end{eg}
 Como es comun en grupos queremos ver que como se comportan sus elementos bajo homomorfismos. Así sea $f:B_n\to G$ un homomorfismo de grupos, por ser homomorfismo, es claro que $f(\{\sigma_1,\ldots,\sigma_{n-1}\})=\{s_1,\ldots,s_{n-1}\}$ debe cumplir las relaciones de trenzas, pero también tenemos la dirección contraria
-\begin{lemma}
+\begin{lemma}\label{homoexis}
     Si existen elementos $\{s_i|i=1,\ldots,n-1\}$ en un grupo $G$ tales que se satisfacen las relaciones de trenzas, entonces existe un unico homomorfismo de grupos $f:B_n\to G$, tal que $s_i=f(\sigma_i).$
 \end{lemma}
 \begin{proof}
@@ -21,10 +21,10 @@ Como es comun en grupos queremos ver que como se comportan sus elementos bajo ho
         f^\prime:&F_n\to G\\
         &\sigma_i\to s_i
     \end{align*}
-    Ahora recordemos que $B_n$ esta dada por las relaciones dadas en la definicion 3.1. Sea $N$ el subgrupo normal de $G$ mas pequeño que contiene los elementos $\sigma_i\sigma_j\sigma_i^{-1}\sigma_j^{-1}$ para $i,j=1,\ldots n-1$ tales que $|i-j|\geq 2$ y $\sigma_k\sigma_{k+1}\sigma_k\sigma_{k+1}^{-1}\sigma_k^{-1}\sigma_{k+1}^{-1}$ para $k=1,\ldots n-2.$ Note que en particular esto significa que $B_n\cong F_n/N$, ademas por como definimos el homomorfismo $f^\prime$ tenemos que $f^\prime(N)=\{1\}\leq G.$ ya que en $G$ las relaciones de trenzas se cumplen. Asi el subgrupo normal $N$ esta contenido en el kernel del homomorfismo, asi por el teorema fundamental del homeomorfismo, $f^\prime$ induce un homeomorfismo  $f:F_n/N\to G$, que es justamente lo que queriamos.
+    Ahora recordemos que $B_n$ esta dada por las relaciones dadas en la definicion \ref{artindef}. Sea $N$ el subgrupo normal de $G$ mas pequeño que contiene los elementos $\sigma_i\sigma_j\sigma_i^{-1}\sigma_j^{-1}$ para $i,j=1,\ldots n-1$ tales que $|i-j|\geq 2$ y $\sigma_k\sigma_{k+1}\sigma_k\sigma_{k+1}^{-1}\sigma_k^{-1}\sigma_{k+1}^{-1}$ para $k=1,\ldots n-2.$ Note que en particular esto significa que $B_n\cong F_n/N$, ademas por como definimos el homomorfismo $f^\prime$ tenemos que $f^\prime(N)=\{1\}\leq G.$ ya que en $G$ las relaciones de trenzas se cumplen. Asi el subgrupo normal $N$ esta contenido en el kernel del homomorfismo, asi por el teorema fundamental del homeomorfismo, $f^\prime$ induce un homeomorfismo  $f:F_n/N\to G$, que es justamente lo que queriamos.
 \end{proof}
 Para los primeros dos grupos de trenzas, estos eran abelianos, pero esto de hecho no se mantiene siempre para esto mostremos primero el siguiente lema
-\begin{lemma}
+\begin{lemma}\label{simptrans}
     Las trasposiciones simples $s_i=(i\,i+1)\in S_n$, generan $S_n$ y satisfacen las relaciones de trenzas.
 \end{lemma}
 \begin{proof}
@@ -44,7 +44,7 @@ Para los primeros dos grupos de trenzas, estos eran abelianos, pero esto de hech
     El grupo $B_n$ para $n\geq 3$ no es abeliano
 \end{theorem}
 \begin{proof}
-     Por los Lemas 3.3 y 3.4 existe un único homomorfismo de grupos $f:B_n\to S_n$, donde $f(\sigma_i)=s_i$, luego como las traspociciones simples generan $S_n$ este homomorfismo es sobreyectivo. Como $S_n$ para $n\geq 3$ es no abeliano se sigue que $B_n$ no los es.
+     Por los Lemas \ref{homoexis} y \ref{simptrans} existe un único homomorfismo de grupos $f:B_n\to S_n$, donde $f(\sigma_i)=s_i$, luego como las traspociciones simples generan $S_n$ este homomorfismo es sobreyectivo. Como $S_n$ para $n\geq 3$ es no abeliano se sigue que $B_n$ no los es.
 \end{proof}
 
 Por lo visto antes existe un homomorfismo unico de grupos $\pi:B_n\to S_n$, de manera similar es claro que la inclusion $i:B_n\to B_{n+1}$ es un homomorfismo, esto en ocasiones resulta util ya que tendremos una cadena de subgrupos $B_1\subset B_2\subset B_3\subset \dots$ y un diagrama que conmuta

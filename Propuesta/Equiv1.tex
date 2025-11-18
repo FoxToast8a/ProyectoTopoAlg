@@ -7,13 +7,13 @@ Denotemos $\mathcal{B}_n$ como el conjunto de trenzas en $n$ cuerdas con la mult
 \begin{proof}
     Previamente ya habíamos visto que con esta operación el conjunto es un monoide, nos bastaría encontrar un inverso para cada $\beta\in \mathcal{B}_n$. Para $i=1,\ldots,n-1$, definimos $\sigma_i^+$ y $\sigma_i^-$ dadas en la siguiente figura
     \begin{center}
-        \textcolor{blue}{luego la dibujo}
+        \input{sigmamas}
     \end{center}
     Veamos que el conjunto de todas estas genera a cualquier trenza $\beta\in \mathcal{B}_n$. consideremos el diagrama de trenzas $D\subset\R\times I$ que la representa. Como hay una cantidad finita $k$ de intersecciones en el diagrama podemos deformarlo de tal manera que cada intersección se de en una segunda coordenada diferente, es decir podemos conseguir una partición del intervalo
     $$0=t_0<t_1<\dots<t_{k-1}<t_k=1,$$
     tal que cada banda $\R\times[t_j,t_{j+1}]$ posee exactamente una intersección en el interior de cada banda. Así cada una de estas bandas se puede ver como una reparametrizacion de la trenza $\sigma_i^+$ o $\sigma_i^-$, así con el producto obtenemos que
     $$\beta=\beta(D)=\sigma_{i_1}^{\varepsilon_1}\dots\sigma_{i_k}^{\varepsilon_k},$$
-    donde cada $\varepsilon_j=\pm$ y $i_j\in{1,2,\ldots,n-1}$.
+    donde cada $\varepsilon_j=\pm$ y $i_j\in\{1,2,\ldots,n-1\}$.
     Así como cada $\sigma_i^+\sigma_i^-=\sigma_i^-\sigma_i^+=1$, debido a que este diagrama es equivalente al trivial aplicando $\Omega_2$. Así el elemento inverso es
     $$\beta^{-1}=\sigma_{i_k}^{-\varepsilon_k}\dots\sigma_{i_1}^{-\varepsilon_1}.$$ 
     Mostrando así que es un grupo. 
@@ -24,14 +24,34 @@ Teniendo en cuenta que vimos que los elementos $\sigma_i^+$ generaban el $B_n$, 
 \end{prop}
 \begin{proof}
     Note que dados $|i-j|\geq 2$, esto quiere decir que $i\geq j+2$ o $j\geq i+2$, en ambos casos al hacer el producto $\sigma_i^+\sigma_j^+$ y $\sigma_j^+\sigma_i^+$ las trenzas involucradas son diferentes, por lo que por medio de una isotopia se puede llegar de un diagrama a otro, asi $\sigma_i^+\sigma_j^+=\sigma_j^+\sigma_i^+.$ Note que para $\sigma_i^+\sigma_{i+1}^+\sigma_i^+=\sigma_{i+1}^+\sigma_i^+\sigma_{i+1}^+,$ se tiene la igualdad debido a que ambos diagramas difieren solo por hacer el movimiento $\Omega_3.$
-    \begin{center}
-        \textcolor{blue}{luego la dibujo}
-    \end{center}
+    
 \end{proof}
+\begin{center}
+        \input{sigmarel1}
+    \end{center}
+    \begin{center}
+        \input{sigmarel2}
+    \end{center}
 Con todo esto estamos preparados para probar nuestro primer resultado de equivalencia
 \begin{theorem}
-    Para $\varepsilon=\pm,$ existe un unico homomorfismo $\varphi_{\varepsilon}:B_n\to\mathcal{B_n}$ tal que $\varphi_{\varepsilon}(\sigma_i)=\sigma_i^{\varepsilon}$ para todo $i=1,\ldots n-1.$ Ademas el homorfismo $\varphi_\varepsilon$ resulta ser un isormorfismo. 
+    Para $\varepsilon=\pm,$ existe un unico homomorfismo $\varphi_{\varepsilon}:B_n\to\mathcal{B}_n$ tal que \\$\varphi_{\varepsilon}(\sigma_i)=\sigma_i^{\varepsilon}$ para todo $i=1,\ldots n-1.$ Ademas el homorfismo $\varphi_\varepsilon$ resulta ser un isormorfismo. 
 \end{theorem}
 \begin{proof}
+    Debido a la similitud de ambas pruebas solo haremos el caso $\varepsilon=+$. Por la proposición 3.2 y el Lema \ref{homoexis} existe un único homomorfismo $\varPhi_{+}$ que cumple lo deseado. Luego por la prueba de la proposición 3.1 sabemos que los $\sigma_i^+$ generan $\mathcal{B}_n$ asi el homomorfismo es sobreyectivo. Para la inyectividad sea $\beta\in \mathcal{B}_n$ representada por su diagrama de trenzas $D$ con la representación presentada en la proposición 3.1, es decir
+     $$\beta=\beta(D)=\sigma_{i_1}^{\varepsilon_1}\dots\sigma_{i_k}^{\varepsilon_k},$$
+     y definamos $\psi:\mathcal{B}_n\to B_n$ tal que
+     $$\psi(D)=(\sigma_{i_1})^{\varepsilon_1}\dots(\sigma_{i_k})^{\varepsilon_k}.$$
+     Donde las potencias $\varepsilon_j=\pm$ significan en $B_n$ el tomar el elemento usual o su inverso. Note que si $\psi$ esta bien definido entonces como función por construcción $\psi\circ \varphi_{+}=id_{B_n}$, luego como mostramos la existencia de una inversa a izquierda, $\varphi_{+}$ es inyectiva y por tanto un isomorfismo. Mostremos que la imagen $\psi(D)$ depende unicamente de $\beta$. Por el teorema 2.15 basta ver que la imagen se preserva bajo secuencias finitas de isotopias de $D$ y movimientos de $\Omega_2$ y $\Omega_3$ (el caso de los inversos es equivalente). Primero observe que las isotopias que preservan el orden de los puntos de corte dado por la expansión no alteran $D$ y por tanto $\psi(D)$ no se altera. Si una isotopia cambia el orden de dos puntos de corte, eso es equivalente a cambiar en la expresión $\sigma_i^{\varepsilon_i}\sigma_j^{\varepsilon_j}$ por $\sigma_j^{\varepsilon_j}\sigma_i^{\varepsilon_i}$ con $|i-j|\geq 2$. Bajo $\psi$ note que estas dos expresiones son iguales en $B_n$ por la primera relación del grupo de trenzas.\\
+
+     Para $\Omega_2$ esto lo que hace es que inserta un $\sigma_i^+\sigma_i^-$ o $\sigma_i^-\sigma_i^+$ a la expresión de $D$, luego al enviarla por $\psi$ al ser inversos queda la misma $\psi(D).$ El movimiento $\Omega_3$ en la expresión de $D$ reemplaza una secuencia $\sigma_i^+\sigma_{i+1}^+\sigma_i^{+}$ por $\sigma_{i+1}^+\sigma_{i}^+\sigma_{i+1}^{+}$, pero en $\psi(D)$ estas dos son iguales en $B_n$ por la segunda relación de trenzas. Así concluimos lo deseado.
+
+\end{proof}
+
+Esto nos permite intercambiar libremente entre las trenzas geométricas y algebraicas, por lo que de ahora en adelante nos referiremos a cualquier elemento en $B_n$ como \textit{trenzas en n cuerdas}, esto nos permite hacer algunas observaciones de $B_n$ desde la vista geometrica, que solo desde el álgebra habría sido difícil de probar
+\begin{corollary}
+    La inclusión $i:B_n\to B_{n+1}$ es inyectiva para todo $n.$
+\end{corollary}
+\begin{proof}
+    Geometricamente la inclusión es tomar una trenza en $n$ cuerdas y añadir una cuerda extra a la derecha del diagrama que no interactué con las demás, resultando en una trenza en $n+1$ cuerdas. Así dadas $b_1$ y $b_2$ trenzas geometricas tales que $i(b_1)$ y $i(b_2)$ isotopicas, como ambas trenzas tienen la cuerda $n+1$ fija, si las restringimos a las primeras $n$ cuerdas obtenemos una isotopia de $b_1$ y $b_2$, así $i$ es inyectiva.
     
 \end{proof}

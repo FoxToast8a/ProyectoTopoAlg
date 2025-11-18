@@ -1,0 +1,57 @@
+%!TEX root = ./main.tex
+Retomamos la definición dada en la sección 2.4 del grupo de trenzas puro, en primera instancia desde un punto de vista netamente algebraico si bien no es imposible resulta difícil pensar en que elementos de $B_n$ pertenecen al kernel de la proyección natural al grupo simétrico. Aqui es donde entra en juego la visualización de los generadores de $B_n$ como cruces en nuestros diagramas de trenzas.
+
+Dada una trenza $\beta$, si tomamos su representación por $D$ la podemos escribir como $\beta=\beta(D)=\sigma_{i_1}^{\varepsilon_1}\dots\sigma_{i_k}^{\varepsilon_k},$ luego por la proyeccion tenemos que
+$$\pi(\beta)=(i_1\,i_1+1)\cdots(i_k\, i_k+1).$$
+Note que para que este sea la identidad en $S_n$ debería de fijar a todos los elementos de $\{1,2,\ldots,n\}$, esto se traduce a que una cuerda con punto inicial $(i,0)$ debe terminar en el punto $(i,1)$. Así una trenza pura en $n$ cuerdas serán aquellas trenzas con permutacion subyacente $(1,2,\ldots,n)$, pero en particular hay una de estas trenzas que es de gran importancia
+\begin{definition}
+    Definimos $A_{i,j}\in P_n$ como la trenza dada por
+    $$A_{i,j}:=\sigma_{j-1}\sigma_{j-2}\cdots\sigma_{i+1}\sigma_i^2\sigma_{i+1}^{-1}\cdots\sigma_{j-2}^{-1}\sigma_{j-1}^{-1}.$$ 
+    Para $1\leq i<j\leq n$
+\end{definition}
+Antes de ver la ilustración general de esta trenza veamos un ejemplo pequeño construido desde la concatenación de diagramas
+\begin{eg}
+    Consideremos $A_{2,5}\in P_5\leq B_5$, en términos de generadores seria $\sigma_4\sigma_3\sigma_2^2\sigma_3^{-1}\sigma_4^{-1}$, los diagramas de cada una de estas concatenados seria el siguiente
+    \begin{center}
+        \input{A25}
+    \end{center}
+    Note en esencia la cuerda que empieza en el punto $(5,0)$ pasa por encima de todas salvo de la que empieza en $(1,0)$, gira al rededor de la que empieza en $(2,0)$ y luego vuelve a pasar por encima en el camino de vuelta. Así por medio de una isotopia que tense las cuerdas obtenemos el siguiente diagrama
+    \begin{center}
+        \input{A25Tensa}
+    \end{center}
+\end{eg}
+Visto el ejemplo particular anterior la representación general de esta trenza es mas clara y se ve así
+\begin{center}
+    \input{Aij}
+\end{center}
+Nuevamente observemos como se ven estos grupos en los casos pequeños
+\begin{eg}
+    Es claro que $P_1=\{1\}$, para $P_2$ note que queremos trenzas no isotopicas a la identidad tales que su permutacion subyacente sea $(1,2)$, es claro que $A_{1,2}$ es una de ellas, pero recordemos que $B_2=\langle\sigma_1\rangle$, desde el diagrama nos podemos dar cuenta que $A_{1,2}=\sigma_1^2$, por lo que $P_2=\langle\sigma_2^2\rangle\cong2\Z$, ya que aplicar $\sigma_1$ un numero impar de veces siempre nos dara una trenza con permutacion subyacente $(2,1)$.
+    \begin{center}
+        \input{A12}
+    \end{center}
+\end{eg}
+De la misma manera en que la inclusión $i:B_n\to B_{n+1}$ añadía una cuerda al diagrama que no interactuaba con otras a la derecha del todo, se puede considerar $i|_{P_n}$,de manera similar podemos pensar en una función que elimine alguna cuerda. Note que esa nocion de eliminar no es conveniente trabajarla directamente en $B_n$ ya que los puntos finales e iniciales de cada cuerda no son los mismos, por lo que podríamos tener algún problema al definirlo, pero en $P_n$ no tendríamos por que preocuparnos
+\begin{definition}
+    Definimos el \textit{homomorfismo de olvido} $f_n:P_n\to P_{n-1}$ tal que a una trenza geométrica en $P_n$, se elimina la trenza con puntos $(n,0,0)$ y $(n,0,1)$ iniciales y finales respectivamente.
+\end{definition}
+La función esta bien definida en clases de isotopia ya que dadas dos trenzas en $P_n$ isotopicas, al eliminar la misma cuerda la isotopia sigue actuando igual sobre las trenzas en $P_{n-1},$ ya que en cada paso es simplemente olvidar la deformación sobre la n-esima cuerda, que sea homomorfismo de grupos es inmediato de la definición de multiplicación de trenzas ya que es solo la concatenación de diagramas y como los puntos finales e iniciales de cada cuerda son el mismo se sigue manteniendo el hecho de que sean trenzas. En vistas de esto. Con esto de manera similar a lo hecho con $\pi$ sera util en un futuro considerar el siguiente subgrupo.
+\begin{definition}
+    Para $n\geq 2$ definimos
+    $$U_n=\ker f_n.$$
+\end{definition}
+De manera inmediata no se ve la razon particular de definir este subgrupo, mas sera útil posteriormente para estudiar propiedades algebraicas.
+\begin{eg}
+    Dada la trenza $A_{2,5}$, por el diagrama es claro que $f_5(A_{2,5})=1_4$, asi $A_{2,5}\in U_5$, en general es facil notar del diagrama general que $A_{i,n}\in U_n$ para $1\leq i<n$.
+\end{eg}
+Retomaremos la discusión de estos objetos en proximas secciones donde con las equivalencias ya tengamos mas herramientas, ahora volvamos a la nocion de los espacios de configuración, que si bien esta primera nocion no es una equivalencia directa con el grupo $B_n$ nos abre el camino para la misma
+\begin{theorem}
+    Para $M=\R^2$ tenemos que $\pi_1(\mathcal{F}_n(M))\cong P_n.$
+\end{theorem}
+\begin{proof}
+    La idea a seguir sera enviar las trenzas puras geométricas a los posibles lazos. Sea $b\subset \R^2\times I$, definamos la imagen de $b$ como el camino $I\to \mathcal{F}_n(\R^2)$, donde $t\mapsto(u_1(t),\ldots,u_n(t))$, donde el camino tiene que cumplir que la $i-$esima cuerda de $b$ intersecta a el plano $\R^2\times\{t\}$ en el punto $(u_i(t),t)$ para todo $i=1,\ldots,n.$ Con esto estamos aprovechando el hecho de que en cada plano hay $n$ puntos diferentes. Asi note que esto nos da un camino que inicia y termina en el punto $q_n=((1,0),\ldots,(n,0))$, esto debido a que es una trenza pura. Para hacer la otra asignación un camino $(\alpha_1,\ldots,\alpha_n):I\to \mathcal{F}_n(\R^2)$ con punto inicial y final $q_n$. Podemos considerar el siguiente conjunto
+    $$\bigcup_{i=1}^n\bigcup_{t\in I}(\alpha_i(t),t).$$
+    Note que como cada $\alpha_i(t)$ es un camino continuo y $t\in I$ estamos creando cada cuerda a partir de este camino, y al ser elementos del espacio de configuración cumplimos la condición de ser disjuntos. Estas construcciones son inversas la una de la otra y dan una correspondencia entre lazos y trenzas geométricas puras, de la forma $P_n=\pi_1(\mathcal{F}_n(\R^2),q_n).$  
+\end{proof}
+
+\textcolor{blue}{Continuar con no ordenados luego.}

@@ -38,18 +38,30 @@ Note que esta noción es muy parecida a una homotopia, asi naturalmente podemos 
     La isotopia entre trenzas geométricas define una relación de equivalencia.
 \end{prop}
 \begin{proof}
-     \textcolor{blue}{luego}
+     Es claro que dada una trenza $b$ es isotopica a si misma tomando $(x,s)\mapsto x$, es decir la identidad. Si $b$ es isotopica a $b^\prime$ existe $F$, tal que $F_s$ es un embedimiento para cada $s$ y $F_0=Id_b$ mientras que $F_1(b)=b^\prime$. Note que como $F_1$ es un embebimiento $F^{-1}_1$ es un homeo con dominio $b^\prime$ e imagen $b$, asi el candidato a considerar es $H_s(x)=F_{1-s}(F^{-1}_1(x)).$ Note que como para cada $s$, $F_s$ es embedimiento entonces la composicion dada tambien lo sera y cada imagen es una trenza geometrica. Luego $H_0=F_1\circ F_1^{-1}=Id_{b^\prime}$ y ademas, $H_1(b^\prime)=F_0(F^{-1}_1(b^\prime))=F_0(b)=Id_b(b)=b.$ Concluyendo asi la simetria.
+     Para la transitividad si tenemos que $b^\prime$ es isotopica a $b^{\prime\prime}$ existe $G$, tal que $G_s$ cumple las condiciones respectivas. Note que ambas son en esencia deformaciones asi basta usar el truco clasico de pegado
+     $$H_s(x)=\begin{cases}
+         F_{2s}(x)&\text{si }0\leq s\leq \frac{1}{2},\\
+         G_{2s-1}(F_1(x))&\text{si }\frac{1}{2}\leq s\leq 1.
+     \end{cases}$$ 
+     Por el lema del pegado es continua $H_s$, y las condiciones se siguen inmediatamente de la definicion ya que $H_0=F_0=Id_b$ y $H_1(b)=G_1(F_1(b))=G_1(b^\prime)=b^{\prime\prime}.$
+
 \end{proof}
 Dadas las similitudes con la noción de homotopia, podemos pensar en una forma de definir un ``producto'' trenzas geométricas con $n$ cuerdas.
 \begin{definition}
-    Dadas 2 trenzas geométricas con $n$ cuerdas $b_1,b_2$, definimos su producto como el conjunto de puntos $(x,y,t)\in \R^2\times I$ tales que si $t\in[0,1/2]$ entonces $(x,y,2t)\in b$, y en caso donde $t\in[1/2,1]$ tenemos que $(x,y,2t-1)\in b_2$.
+    Dadas 2 trenzas geométricas con $n$ cuerdas $b_1,b_2$, definimos su producto como el conjunto de puntos $(x,y,t)\in \R^2\times I$ tales que si $t\in[0,1/2]$ entonces $(x,y,2t)\in b_1$, y en caso donde $t\in[1/2,1]$ tenemos que $(x,y,2t-1)\in b_2$.
 \end{definition}
 Note que el producto de dos trenzas geométricas de ese estilo claramente sera otra trenza, ya que lo único que estamos haciendo es unir el final de una con el inicio de la otra. La siguiente proposición nos permitirá definirla como un producto sobre las clases de trenzas geométricas con $n$ cuerdas
 \begin{prop}
     Dadas $b_1,b_2,b_1^\prime,b_2^\prime$, donde $b_i$ es isotopica a $b_i^\prime$ para $i=1,2$, entonces $b_1b_2$ es isotopica a $b_1^\prime b^\prime_2$
 \end{prop}
 \begin{proof}
-    \textcolor{blue}{luego}
+    Sea $F$ la isotopia entre $b_1$ y $b_1^{\prime}$ y $G$ la de $b_2$ y $b_2^\prime$, luego dada la definicion de $b_1b_2$ un simple truco de concatenacion de $F$ y $G$ basta, es decir
+    $$H_s(x,y,t)=\begin{cases}
+        F_s(x,y,2t)&\text{si }0\leq t\leq \frac{1}{2},\\
+        G_s(x,y,2t-1)&\text{si } \frac{1}{2}\leq t\leq 1.
+    \end{cases}$$
+    Por las propiedades de $F$ y $G$ se sigue que $H$ es la isotopia desdeada.
 \end{proof}
 Dado esto podemos observar que esta operación es asociativa y ademas tiene un elemento neutro. Este elemento neutro sera denotado como $1_n$ y es presentador por la trenza geométrica dibujada de el ejemplo 2.2. en su expresión de conjunto seria
 $$1_n=\{1,2,\ldots,n\}\times\{0\}\times I.$$
@@ -111,7 +123,7 @@ Con esto en mente es relativamente sencillo imaginarse la forma en la que uno pu
      Dados dos diagramas $D$ y $D^\prime$ decimos que son $R$-equivalentes si $D$ se puede transformas por medio de una secuencia finita de isotopias y movimientos de Reidemeister a $D^\prime$
  \end{definition}
  A simple instancia no parece tan claro que esta nocion de equivalencia pueda ser trasladada hacia todas las trenzas geométricas, pero resulta que si podemos hacerlo
- \begin{theorem}
+ \begin{theorem}\label{R-equiv}
      Dos diagramas de trenzas representan trenzas geométricas isotopicas si y solo si estos diagramas son $R$-equivalentes.
  \end{theorem}
  La prueba de este hecho se reduce a cuatro pasos, pero la terminología y longitud de la prueba se salen de los propósitos del proyecto, para la prueba de este hecho vea \cite{KasselTuraev2008}.
