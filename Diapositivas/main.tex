@@ -73,9 +73,17 @@ La primera aparición con mención propia de los grupos de trenzas se las debemo
          b\cap(\R^2\times \{0\})=\{(i,0,1)|i=1,2,\ldots n\}.
      \end{align*}
 \end{block}
-  
 \end{frame}
-
+\begin{frame}
+      \begin{center}
+          \input{Imagenes Diapos/1}
+      \end{center}
+  \end{frame}
+\begin{frame}
+     \begin{center}
+          \input{Imagenes Diapos/2}
+      \end{center}
+\end{frame}
 \begin{frame}{Equivalencia de Trenzas Geometricas}
     \begin{block}{Definición}
         Dos trenzas $b$ y $b^\prime$ son isotopicas si existe una función continua $F:b\times I\to R^2\times I$, tal que para cada $s\in I$, la función $F_s:=F(-,s)$ es un embedimiento el cual su imagen es una trenza geométrica de $n$ cuerdas, $F_0=Id_b$ y $F_1(b)=b^\prime.$\\
@@ -104,6 +112,11 @@ La primera aparición con mención propia de los grupos de trenzas se las debemo
         \end{itemize} 
 \end{block}
 \end{frame}
+\begin{frame}
+    \begin{center}
+        \input{Imagenes Diapos/3}
+    \end{center}
+\end{frame}
 \begin{frame}{}
     \begin{block}{Definicion}
         Dos diagramas de trenzas $D$ y $D^\prime$ se dicen isotopicos  si existe una funcion continua $F:D\times I\to R\times I$ tal que para cada $s\in I$, $D_s=F(D\times\{s\})\subset \R\times I$ es un diagrama de trenzas con la misma cantidad cuerdas, ademas $D_0=D$ y $D_1=D^\prime.$ 
@@ -112,6 +125,21 @@ La primera aparición con mención propia de los grupos de trenzas se las debemo
     \begin{block}{Definición}
         Definimos $\Omega_2$ un movimiento donde tomamos dos cuerdas del diagrama y creamos dos cruces nuevos transversales, pasando una de las cuerdas del diagrama por debajo de la otra, mientras que a $\Omega_3$ es un movimiento que involucra a tres cuerdas y preserva el numero de cruces transversales pero invierte el diagrama de manera reflexiva.  
     \end{block}
+\end{frame}
+\begin{frame}
+    \begin{center}
+        \input{Imagenes Diapos/4}
+    \end{center}
+\end{frame}
+\begin{frame}
+    \begin{center}
+        \input{Imagenes Diapos/5}
+    \end{center}
+\end{frame}
+\begin{frame}
+    \begin{center}
+        \input{Imagenes Diapos/6}
+    \end{center}
 \end{frame}
 \begin{frame}{Diagramas y Trenzas Geometricas}
     \begin{block}{Definicion}
@@ -125,6 +153,12 @@ La primera aparición con mención propia de los grupos de trenzas se las debemo
     \begin{block}{Teorema}
         $\mathcal{B}_n$ es un grupo.                                                            
     \end{block}
+    
+\end{frame}
+\begin{frame}
+    \begin{center}
+        \input{Imagenes Diapos/inv}
+    \end{center}
 \end{frame}
 \begin{frame}{Grupo de Trenzas de Artin $B_n$}
 
@@ -155,15 +189,149 @@ La primera aparición con mención propia de los grupos de trenzas se las debemo
         Para $\varepsilon=\pm,$ existe un unico homomorfismo $\varphi_{\varepsilon}:B_n\to\mathcal{B}_n$ tal que \\$\varphi_{\varepsilon}(\sigma_i)=\sigma_i^{\varepsilon}$ para todo $i=1,\ldots n-1.$ Ademas el homorfismo $\varphi_\varepsilon$ resulta ser un isormorfismo. 
     \end{block}
 \end{frame}
-\begin{frame}{Trenzas Puras $P_n$}
+\begin{frame}
+    \begin{center}
+        \input{Imagenes Diapos/sigmamas}
+    \end{center}
+\end{frame}
+\begin{frame}
+    \begin{center}
+        \input{Imagenes Diapos/sigmarel1}
+    \end{center}
+\end{frame}
+\begin{frame}
+    \begin{center}
+        \input{Imagenes Diapos/sigmarel2}
+    \end{center}
+\end{frame}
+\begin{frame}
+    \begin{center}
+        \input{Imagenes Diapos/sigmarel2}
+    \end{center}
+\end{frame}
+\begin{frame}{Trenzas Puras}
 \begin{block}{Definición}
     Dada la proyección natural vista previamente $\pi:B_n\to S_n$, definimos el \textit{grupo de trenzas puras} como 
     $$P_n:=\ker\pi.$$
 \end{block}
+\begin{block}{Definición}
+    Definimos $A_{i,j}\in P_n$ como la trenza dada por
+    $$A_{i,j}:=\sigma_{j-1}\sigma_{j-2}\cdots\sigma_{i+1}\sigma_i^2\sigma_{i+1}^{-1}\cdots\sigma_{j-2}^{-1}\sigma_{j-1}^{-1}.$$ 
+    Para $1\leq i<j\leq n$
+\end{block}
     
 \end{frame}
+\begin{frame}
+    \begin{center}
+        \input{Imagenes Diapos/Aij}
+    \end{center}
+\end{frame}
 
+\begin{frame}{Espacios de Configuración }
+\begin{block}{Definición}
+    El subespacio de $M^n$ definido como
+    $$\mathcal{F}_n(M):=\{(u_1,\ldots,u_n)\in M^n|u_i\neq u_j\text{ para todo }i\neq j\},$$
+    se conoce como el \textit{espacio de configuracion} de $n-$tuplas ordenadas de puntos en $M.$
+\end{block}
+\begin{block}{Definición}
+    El grupo fundamental $\pi_1(\mathcal{F}_n(M))$ se conoce como el \textit{grupo de trenzas puras} de $M$ en $n$ cuerdas.
+\end{block}
+    
+\end{frame}
+\begin{frame}
+    \begin{center}
+        \input{Imagenes Diapos/puntoconf}
+    \end{center}
+\end{frame} 
+\begin{frame}{Equivalencias}
+    \begin{block}{Teorema}
+    Para $M=\R^2$ tenemos que $\pi_1(\mathcal{F}_n(M))\cong P_n.$
+\end{block}
+\begin{block}{Definición}
+    Dado $\mathcal{F}_n(M)$, definimos
+    $$C_n(M):=\mathcal{F}_n(M)/S_n$$
+    Donde el cociente es dado por la acción usual de $S_n$ permutando el orden de la entradas. Este espacio se conoce como el espacio de configuración de conjuntos de puntos no ordenados.
+\end{block}
+\begin{block}{Teorema}
+    Para $M=\R^2$ tenemos que
+    $$B_n\cong\pi_1(C_n(M),q)$$
+    Donde $q$ hace referencia al conjunto de puntos no ordenado $\{(1,0),(2,0),\ldots,(n,0)\}.$
+\end{block}
 
+\end{frame}
+\begin{frame}
+    \begin{center}
+        \input{Imagenes Diapos/confipuro}
+    \end{center}
+\end{frame}
+\begin{frame}
+    \begin{center}
+        \input{Imagenes Diapos/sigma1coc}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Automorfismos de $F_n$}
+
+ \begin{block}{Definición}
+    Decimos que un automorfismo $\phi:F_n\to F_n$ es un \textit{automorfismo de trenzas} si satisface las siguientes condiciones
+    \begin{itemize}
+        \item[i)] Existe $\mu\in S_n$ tal que $\phi(a_k)$ es conjugado en $F_n$ a $a_{\mu(k)}$ para todo $k\in{1,2,\ldots,n}$
+        \item[ii)]$\phi(a_1\dots a_n)=a_1\dots a_n.$
+    \end{itemize}
+\end{block}  
+\begin{block}{Proposición}
+       $\tilde B_n$ es un grupo con la composición. 
+    \end{block}
+\end{frame}
+
+\begin{frame}{Mapping Class Group}
+\begin{block}{Definición}
+   Un \textit{auto-homeomorfismo} de la pareja $(M,Q)$ es un homeomorfismo $f:M\to M$ tal que
+    \begin{itemize}
+        \item[i)] Para todo $x\in\partial M$,\, $f(x)=x$.
+        \item[ii)] $f(Q)=Q.$ 
+        \item[iii)] Preserva la orientacion.
+    \end{itemize}
+\end{block} 
+\begin{block}{Definición}
+    El \textit{Mapping Class Group} $\mathcal{M}(M,Q)$ es el conjunto de clases de isotopia de automorfismos con la composicion de funciuones como operacion.
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{Definición}
+    Decimos que $\alpha$ es un \textit{arco generador} en $(M,Q)$ si
+    \begin{itemize}
+        \item $\alpha\subset M$ con $\alpha$ homeomorfico a $I.$
+        \item $\alpha\cap(Q\cup\partial M)=\{x_1,x_2\}\subset Q$
+    \end{itemize}
+\end{block}
+\begin{block}{Definición}
+    Dado un arco generador $\alpha$ definimos el \textit{medio-giro} como
+    $$\tau_\alpha\colon(M,Q)\to(M,Q)$$
+    Tal que dada una vecindad pequeña $U$ de $\alpha$, que identificamos de manera homeomorfa con $\{z\in\C\colon|z|<1\}$ tal que $\alpha=\left[-\dfrac{1}{2},\dfrac{1}{2}\right]$ y la orientacion de $M$ sea en contra de las manecillas del reloj, tal que fuera de $U$, $\tau_\alpha$ es la identidad, Si $|z|\leq\dfrac{1}{2}$ es enviado a $-z$, y para $\dfrac{1}{2}\leq|z|<1$ es enviado a $ze^{-2\pi i|z|}$
+\end{block}
+  
+   \end{frame}  
+    \begin{frame}
+    \begin{center}
+        \input{Imagenes Diapos/tau}
+    \end{center}
+\end{frame}
+   
+   \begin{frame}{Equivalencia MCG y Automorfismos}
+   \begin{block}{Teorema}
+    Para $n\geq 1$, los homomorfismos $\eta,\rho$ son isomorfismos que hacen que el siguiente diagrama conmute
+     \begin{center}
+         \input{Imagenes Diapos/diagramamap}
+     \end{center}
+\end{block}
+       
+    \end{frame}
+    \begin{frame}
+    \begin{center}
+        \input{Imagenes Diapos/discomap}
+    \end{center}
+\end{frame} 
     
 
 \begin{frame}{$B_3$ y $PSL(2,\Z)$}
@@ -179,6 +347,37 @@ La primera aparición con mención propia de los grupos de trenzas se las debemo
     \begin{block}{Proposición}
          $$Z(B_3)=\langle y^3 \rangle$$
     \end{block}
+    \begin{block}{Teorema}
+         Dados $B_3$ y $SL(2,\Z)$ existe un unico homomorfismo, que desciende en un isomorfismo
+        $$B_3/Z(B_3)\cong PSL(2,\Z).$$
+    \end{block}
+\end{frame}
+ \begin{frame}
+    \begin{center}
+        \input{Imagenes Diapos/Delta}
+    \end{center}
+\end{frame}
+\begin{frame}{Hechos del Grupo de Trenzas}
+
+\begin{block}{Corolario}
+     $P_n$ es generado por $A_{i,j}$ para $1\leq i<j\leq n$    
+    \end{block}
+    \begin{block}{Teorema}
+     Si $n\geq 3$ $Z(B_n)=Z(P_n)=\langle \Delta_n^2\rangle$, donde
+    $$\Delta_n=(\sigma_1\sigma_2\cdots\sigma_{n-1})\cdots(\sigma_1\sigma_2)\sigma_1$$   
+    \end{block}
+    \begin{block}{Corolario}
+      Para $m\neq n$, $B_m$ no es isomorfo a $B_n.$    
+    \end{block}
+    \begin{block}{Teorema}
+     $B_n$ es un grupo libre de torsión.  
+    \end{block}
+    
+\end{frame}
+\begin{frame}{El espacio $C_n(\R^2)$}
+ Finalizamos con una breve descripción del espacio de configuración por medio de polinomios, que nos da una relación muy interesante hacia la geometría algebraica. Si hacemos la identificación natural de $\R^2=\C$, consideremos el siguiente polinomio simétrico
+ $$p_k(u)=(-1)^k\sum_{1\leq i_1<\cdots<i_k\leq n}u_{i_1}\cdots u_{i_k}.$$
+ Donde $u\in \mathcal{F}_n(\C)$ y $k=1,\ldots n$, note que por ser simétrico estas funciones $p_k$ son invariantes bajo la acción de $S_n$, por lo que inducen una función $C_n(\C)\to \C^n $. Resulta que esta función es un homeomorfismo al conjunto de los polinomios monoicos con raíces diferentes de grano $n$ y coeficientes complejos. Siendo así $B_n$ el grupo fundamental de un conjunto clásico en la geometría algebraica.
 \end{frame}
 
 
