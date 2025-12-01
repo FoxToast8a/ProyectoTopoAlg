@@ -40,11 +40,11 @@ La función esta bien definida en clases de isotopia ya que dadas dos trenzas en
     Para $n\geq 2$ definimos
     $$U_n=\ker f_n.$$
 \end{definition}
-De manera inmediata no se ve la razon particular de definir este subgrupo, mas sera útil posteriormente para estudiar propiedades algebraicas.
+De manera inmediata no se ve la razón particular de definir este subgrupo, mas sera útil posteriormente para estudiar propiedades algebraicas.
 \begin{eg}
-    Dada la trenza $A_{2,5}$, por el diagrama es claro que $f_5(A_{2,5})=1_4$, asi $A_{2,5}\in U_5$, en general es facil notar del diagrama general que $A_{i,n}\in U_n$ para $1\leq i<n$.
+    Dada la trenza $A_{2,5}$, por el diagrama es claro que $f_5(A_{2,5})=1_4$, así $A_{2,5}\in U_5$, en general es fácil notar del diagrama general que $A_{i,n}\in U_n$ para $1\leq i<n$.
 \end{eg}
-Retomaremos la discusión de estos objetos en proximas secciones donde con las equivalencias ya tengamos mas herramientas, ahora volvamos a la nocion de los espacios de configuración, que si bien esta primera nocion no es una equivalencia directa con el grupo $B_n$ nos abre el camino para la misma
+Retomaremos la discusión de estos objetos simplemente para enunciar algunos hechos de interés al final del documento, pero primero vayamos camino a las equivalencias.
 \begin{theorem}
     Para $M=\R^2$ tenemos que $\pi_1(\mathcal{F}_n(M))\cong P_n.$
 \end{theorem}
@@ -54,4 +54,43 @@ Retomaremos la discusión de estos objetos en proximas secciones donde con las e
     Note que como cada $\alpha_i(t)$ es un camino continuo y $t\in I$ estamos creando cada cuerda a partir de este camino, y al ser elementos del espacio de configuración cumplimos la condición de ser disjuntos. Estas construcciones son inversas la una de la otra y dan una correspondencia entre lazos y trenzas geométricas puras, de la forma $P_n=\pi_1(\mathcal{F}_n(\R^2),q_n).$  
 \end{proof}
 
-\textcolor{blue}{Continuar con no ordenados luego.}
+En primera instancia es difícil ver como los lazos pueden ser trenzas pero una representación esquemática, que si bien antes seria sugestiva, ahora nos puede ayudar con la visualización
+\begin{eg}
+    Consideremos $\mathcal{F}_3(\R^2)$, Note que dado un lazo $\alpha(t)=(\alpha_1(t),\alpha_2(t),\alpha_3(t))$ basado en $q_3=((1,0),(2,0),(3,0))$ se puede ver en $\R^2\times I$ ya que cada $\alpha_i$ es un camino que se puede graficar, y como para cada $t$  $\alpha_i(t)\neq \alpha_j(t)$ serán caminos que no se cruzan, como se puede ver en la siguiente imagen
+    \begin{center}
+        \input{confipuro}
+    \end{center}
+    Separamos los puntos iniciales y finales por propósitos demostrativos, mas recuerde que en $\mathcal{F}_3(\R^2)$, el punto de abajo es igual al de arriba.
+\end{eg}
+
+Observe que nuestro mayor problema para llegar a una trenza en $B_n$ es el problema de que los lazos tienen punto inicial y final el mismo, así una trenza cualquiera al enviarla al espacio de configuración correspondiente no seria un lazo
+\begin{eg}
+    Observe que si tomamos la trenza $\sigma_1\in B_2$, al replicar la construcción de la función hecha en el teorema $t\to(u_1(t),u_2(t))$ obtenemos un camino que empieza en $0\to ((1,0),(2,0))$ y termina en $1\to ((2,0),(1,0))$, así no es un lazo en $\pi_1(\mathcal{F}_2(\R^2))$, lo cual es claro ya que la permutacion subyacente es $(2,1)$
+    \begin{center}
+        \input{sigma1coc}
+    \end{center}
+\end{eg}
+
+Note que la descripción del espacio en coordenadas nos da una acción natural de $S_n$ sobre $\mathcal{F}_n(M)$, en la cual cada elemento actuá permutando las entradas, esto nos da una herramienta para ignorar el orden de los puntos.
+
+\begin{eg}
+    En el ejemplo anterior si pasamos a mirar este camino en $\pi_1(\mathcal{F}_2(\R^2)/S_2)$ note que particularmente los puntos iniciales y finales son los mismos ya que en el cociente $[((1,0),(2,0))]=[((2,0),(1,0))]$
+\end{eg}
+
+\begin{definition}
+    Dado $\mathcal{F}_n(M)$, definimos
+    $$C_n(M):=\mathcal{F}_n(M)/S_n$$
+    Donde el cociente es dado por la acción usual de $S_n$ permutando el orden de la entradas. Este espacio se conoce como el espacio de configuración de conjuntos de puntos no ordenados.
+\end{definition}
+
+Siguiendo una idea similar a la dada para las trenzas puras tenemos nuestro resultado de equivalencia
+\begin{theorem}
+    Para $M=\R^2$ tenemos que
+    $$B_n\cong\pi_1(C_n(M),q)$$
+    Donde $q$ hace referencia al conjunto de puntos no ordenado $\{(1,0),(2,0),\ldots,(n,0)\}.$
+\end{theorem}
+\begin{proof}
+    La construcción es igual al caso de trenzas puras salvo que como ya no tenemos en cuenta el orden de las coordenadas podemos ver estas clases como el conjunto que estos puntos forman en $\R^2$, así una trenza $b\subset\R^2\times I$ se enviá unívocamente a el lazo $I\to C_n(\R^2)$, donde $t\to b_t\subset\R^2$, tal que $b\cap(R^2\times \{t\})=b_t\times\{t\}.$ 
+\end{proof}
+
+

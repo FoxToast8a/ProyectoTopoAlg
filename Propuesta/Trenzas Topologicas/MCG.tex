@@ -36,4 +36,42 @@ Si el conjunto de puntos $Q=\varnothing$ omitiremos su escritura en general. A c
    \end{cases}$$ 
    Que justamente es $h$ ya que este es auto-homeomorfismo. Claramente estos son continuos y son auto-homeomorfismos, asi concluimos lo deseado, en particular note que si $h(0)=0$, cada $h_t$ fija $0$ por lo que $\mathcal{M}(D^n,\{0\})=\{1\}.$
 \end{eg}
-\textcolor{blue}{hablar de halftwist}
+En particular nos concentraremos en el caso $D^2$ y $Q\subset\int(M)$ un conjunto finito de puntos por lo anterior para un solo punto es el grupo trivial, de momento esto no resulta particularmente revelador pero al tomar $|Q|=k\geq 2$ se vera mejor la conexion pero no nos adelantemos.
+\subsection{Medios-Giros}
+Siguiendo las mismas nociones anteriores y con vistas en llegar a nociones de trenzas consideramos arcos especiales dentro de $D^2$
+\begin{definition}
+    Decimos que $\alpha$ es un \textit{arco generador} en $(M,Q)$ si
+    \begin{itemize}
+        \item $\alpha\subset M$ con $\alpha$ homeomorfico a $I.$
+        \item $\alpha\cap(Q\cup\partial M)=\{x_1,x_2\}\subset Q$
+    \end{itemize}
+\end{definition}
+Note que la primera condicion de ser homeomorfo evita que hallan autointersecciones en estos arcos, asi son lo que se suele llamar arcos simples. La segunda condicions hace referencia a que los arcos son disyuntos con $Q$ y la frontera de $M$ salvo en los extremos que son dos puntos exclusivamente de $Q$
+
+\begin{eg}
+Si tomamos $M=D^2$ y $Q=\left\{\pm\dfrac{1}{2}\right\}$, $\alpha$ es un arco generador donde sus extremos son los puntos de $Q.$
+    \begin{center}
+        \input{Trenzas Topologicas/arco}
+    \end{center}
+\end{eg}
+
+\begin{definition}
+    Dado un arco generador $\alpha$ definimos el \textit{medio-giro} como
+    $$\tau_\alpha\colon(M,Q)\to(M,Q)$$
+    Tal que dada una vecindad pequeña $U$ de $\alpha$, que identificamos de manera homeomorfa con $\{z\in\C\colon|z|<1\}$ tal que $\alpha=\left[-\dfrac{1}{2},\dfrac{1}{2}\right]$ y la orientacion de $M$ sea en contra de las manecillas del reloj, tal que fuera de $U$, $\tau_\alpha$ es la identidad, Si $|z|\leq\dfrac{1}{2}$ es enviado a $-z$, y para $\dfrac{1}{2}\leq|z|<1$ es enviado a $ze^{-2\pi i|z|}$
+\end{definition}
+\begin{eg}
+    Tomando como referencia el ejemplo anterior un Medio giro dado por $\tau_\alpha$ alteraria una curva transversal de la siguiente forma
+    \begin{center}
+        \input{Trenzas Topologicas/tau}
+    \end{center}
+\end{eg}
+Note que en terminos mas informales basicamente estamos rotando un $\alpha$ un angulo de $\pi$ fijando un punto medio, y todo lo demas se distorsiona acordemente. A continuacion enunciaremos mas no demostraremos las propiedades de estos medios giros
+    \begin{itemize}
+        \item Si $f\colon (M,Q)\to(M^\prime,Q^\prime)$ es un homeomorfismo que preserva la orientacion, y $\alpha$ un arco generador, entonces $f(\alpha)$ tambien lo es y $\tau_{f(\alpha)}=f\tau_\alpha f^{-1}.$
+        \item Si $\alpha$ y $\alpha^\prime$ son isotopicos en la clase de arcos generadores, entonces $\tau_\alpha=\tau_{\alpha^\prime}$ en $\mathcal{M}(M,Q).$
+        \item Si $\alpha,\beta$ son arcos generadores disjuntos en $\mathcal{M}(M,Q)$ entonces $\tau_\alpha\tau_\beta=\tau_\beta\tau_\alpha.$
+        \item Para $\alpha,\beta$ arcos generadores que son disjuntos salvo un punto en comun en sus extremos tenemos que $\tau_\alpha\tau_\beta\tau_\alpha=\tau_\beta\tau_\alpha\tau_\beta.$
+    \end{itemize}
+    Observe la gran similitud inmediatamente con las relaciondes de trenzas, bastaria ver que tipo de arcos generadores son los que generarian el Mapping class group.
+

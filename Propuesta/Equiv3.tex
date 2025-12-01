@@ -1,0 +1,24 @@
+%!TEX root = ./main.tex
+La manera en la que nombramos los elementos de $\tilde{B}_n$ nos invita a pensar que habrá una clara relación entre los automorfismos $\tilde{\sigma}_i$ y los $\sigma_i$, y resulta que si la hay, y como ya es costumbre en este documento nos da una nueva equivalencia
+\begin{theorem}
+    La función que enviá $\sigma_i\mapsto \tilde{\sigma}_i $ define un isomorfismo de grupos entre $B_n$ y $\tilde{B}_n$
+\end{theorem}
+Si bien esta puede resultar interesante desde un punto de vista algebraico, nos interesa mas ver que tiene esto que ver con el Mapping Class Group de manera breve.\\
+
+Sea $n\geq 1$, definimos $Q_n=\{(1,0),\ldots,(n,0)\}$. Sea $D$ un disco en $\R^2$ que contenga a $Q_n$ en su interior y lo orientamos en sentido contrario a las manecillas del reloj. y definimos los arcos
+$$\alpha_i=[i,i+1]\times\{0\}$$
+para $i=1,\ldots,n-1.$ como se puede ver en la siguiente imagen
+\begin{center}
+     \input{discomap}
+ \end{center} 
+ Note que por las propiedades dadas previamente $\tau_{\alpha_i}\in\mathcal{M}(D,Q_n)$ y ademas satisfacen las relaciones de trenzas, luego por \ref{homoexis} existe un homomorfismo de grupos que enviá $\sigma_i\to\tau_{\alpha_i}$, Ahora intentaremos definir un homomorfismo de grupos $\rho\colon \mathcal{M}(D,Q_n)\to \tilde{B}_n$, sabemos que escogiendo $d\in\partial D$, el grupo fundamental $\pi_1(D-Q_n,d)\cong F_n$ generado por los lazos abajo
+ \begin{center}
+     \input{gen}
+ \end{center}
+ Note que cada auto homeomorfismo se puede restringir a $D-Q_n$, y como por hipótesis $d$ queda fijo, por lo que induce un automorfismo $\rho(f)$, resulta que este automorfismo es un automorfismo de trenzas por lo que tenemos el siguiente teorema que nos da la ultima equivalencia
+ \begin{theorem}
+     Para $n\geq 1$, los homomorfismos $\eta,\rho$ son isomorfismos que hacen que el siguiente diagrama conmute
+     \begin{center}
+         \input{diagramamap}
+     \end{center}
+ \end{theorem}
