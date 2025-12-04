@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.7.10)  30 NOV 2025 23:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.7.10)  2 DEC 2025 20:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -80,7 +80,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.5 \begin{tikzpicture}
-                       [x=0.75pt,y=0.75pt,yscale=-0.8,xscale=0.8]
+                       [x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -93,7 +93,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.5 \begin{tikzpicture}[
-                        x=0.75pt,y=0.75pt,yscale=-0.8,xscale=0.8]
+                        x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -124,9 +124,7 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no = in font nullfont!
 Missing character: There is no - in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 8 in font nullfont!
+Missing character: There is no 1 in font nullfont!
 Missing character: There is no , in font nullfont!
 Missing character: There is no x in font nullfont!
 Missing character: There is no s in font nullfont!
@@ -135,9 +133,7 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no = in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 8 in font nullfont!
+Missing character: There is no 1 in font nullfont!
 Missing character: There is no ] in font nullfont!
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 5--7
